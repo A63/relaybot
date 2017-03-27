@@ -1,0 +1,19 @@
+Variables:
+EXECDIR                    Home of relaybot.sh and all the modules + static data
+DATADIR                    Home of things like messages to relay
+
+Functions:
+addcmd <command> <function>
+delcmd <command> <function>
+addeventhandler <event> <function>
+deleventhandler <event> <function>
+handleevent <event> <data...>
+toggle_cammode <mode>
+
+Command functions are called as <function> <from> <parameters>
+
+Events commonly pass along the following parameters:
+chatmsg <msg> <from> (<color>, if applicable>)
+join <nickname>
+part <nickname>
+camup <nickname>
