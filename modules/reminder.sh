@@ -84,7 +84,7 @@ reminder()
     return 0
   fi
   for x in `grep -rl "^For: ${from}$" "${DATADIR}/reminders" 2> /dev/null`; do
-    desttime="`sed -n -e 's/^Time: //p' "$remindmsg"`"
+    desttime="`sed -n -e 's/^Time: //p' "$x"`"
     if [ "$desttime" -gt "`date +%s`" ]; then continue; fi
     msg="`sed -n -e 's/^Message: //p' "$x"`"
     say "${from}: remember to ${msg}"
